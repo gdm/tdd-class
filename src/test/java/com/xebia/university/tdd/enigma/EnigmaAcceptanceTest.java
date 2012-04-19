@@ -2,18 +2,19 @@ package com.xebia.university.tdd.enigma;
 
 import org.junit.Test;
 
+import static com.xebia.university.tdd.enigma.Enigma.realAlphabet;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 public class EnigmaAcceptanceTest {
-  private EnigmaTransformer rotorI;
-  private EnigmaTransformer rotorII;
-  private EnigmaTransformer rotorIII;
-  private EnigmaTransformer reflector;
+  private EnigmaTransformer reflector = new EnigmaReflector();
+  private EnigmaTransformer rotorI = new Rotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ", realAlphabet, reflector);
+  private EnigmaTransformer rotorII = new Rotor("AJDKSIRUXBLHWTMCQGZNPYFVOE", realAlphabet, rotorI);
+  private EnigmaTransformer rotorIII = new Rotor("BDFHJLCPRTXVZNYEIWGAKMUSQO", realAlphabet, rotorII);
 
   @Test
   public void shouldRevealEnigma() {
-    Enigma enigma = Enigma.withTransformers(rotorI, rotorII, rotorIII, reflector);
-    assertThat(enigma.transform("QMJIDO MZWZJFJR"), is("ENIGMA REVEALED"));
+    Enigma enigma = Enigma.withTransformer(rotorIII);
+    assertThat(enigma.transform("ENIGMAREVEALED"), is("FQGAHWNYNCKRLF"));
   }
 }

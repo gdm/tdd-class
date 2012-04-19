@@ -6,4 +6,7 @@ package com.xebia.university.tdd.enigma;
  * @author iwein
  */
 public interface EnigmaTransformer {
+  int transform(int i);
+
+  EnigmaTransformer rotate(int offset);
 }

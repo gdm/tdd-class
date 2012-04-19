@@ -66,13 +66,12 @@
             <artifactId>hamcrest-all</artifactId>
             <version>${hamcrest.version}</version>
         </dependency>
-<!-- cool framework, but we don't need it now
+<!-- cool framework, but we don't need it now -->
         <dependency>
             <groupId>com.jayway.awaitility</groupId>
             <artifactId>awaitility</artifactId>
             <version>1.3.1</version>
         </dependency>
--->
     </dependencies>
 
     <build>
