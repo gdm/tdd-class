@@ -5,6 +5,7 @@ import com.xebia.university.tdd.enigma.EnigmaTransformer;
 import com.xebia.university.tdd.enigma.Rotor;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.internal.matchers.TypeSafeMatcher;
 
@@ -23,6 +24,7 @@ import static org.mockito.Mockito.mock;
  *
  * @author iwein
  */
+@Ignore
 public class TestDrive {
 
   @Test
